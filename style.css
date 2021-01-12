@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+body {
+  background: rgb(63, 167, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 167, 36, 1) 0%,
+    rgba(160, 215, 107, 1) 100%
+  );
+  font-family: "Montserrat";
+}
+
+.card {
+  margin: auto;
+  margin-top: 50px;
+  -webkit-box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  width: 6rem;
+  height: 10rem;
+}
+
+.number {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 45px;
+  font-size: 25px;
+}
+
+.up-suit {
+  position: absolute;
+  font-size: 25px;
+  margin-top: 0;
+}
+
+.down-suit {
+  position: absolute;
+  font-size: 25px;
+  margin-left: 35px;
+  margin-top: 90px;
+  -moz-transform: scale(1, -1);
+  -webkit-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(-1, -1);
+}
+
+#draw {
+  font-size: 20px;
+  border: 2px solid white;
+  -webkit-box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  font-family: 'Montserrat';
+}
+
+#sort {
+  font-size: 20px;
+  border: 2px solid white;
+  -webkit-box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  font-family: 'Montserrat';
+  color: white;
+}
+
+.btn-warning {
+  background: rgb(219, 126, 5);
+}
+
+.btn-warning:hover {
+  background: rgb(172, 101, 9);
+}
+
+.btn-warning:active {
+  background: rgb(110, 67, 9);
+}
+
+#reset {
+  font-size: 20px;
+  border: 2px solid white;
+  -webkit-box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: -1px 10px 12px 12px rgba(0, 0, 0, 0.18);
+  font-family: 'Montserrat';
+  margin-left: 150px;
+}
+
+#numLabel {
+  width: 100%;
+  font-family: 'Montserrat';
+}
