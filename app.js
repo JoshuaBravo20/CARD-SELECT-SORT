@@ -68,23 +68,25 @@ resetBtn.addEventListener("click", () => {
   window.location.reload();
 });
 
-// BOTON PARA ORDENAR - ESTILO BUBBLE
-sortBtn.addEventListener("click", () => {
-  let stop = cardArray.length - 1;
-  while (stop > 0) {
-    let j = 0;
-    while (j < stop) {
-      if (cardArray[j] > cardArray[j + 1]) {
-        let aux = cardArray[j];
-        cardArray[j] = cardArray[j + 1];
-        cardArray[j + 1] = aux;
+// BOTON PARA ORDENAR - ESTILO SELECT
+sortBtn.addEventListener("click", function () {
+  let n = cardArray.length;
+      
+  for(let i = 0; i < n; i++) {
+      // Finding the smallest number in the subarray
+      let min = i;
+      for(let j = i+1; j < n; j++){
+          if(cardArray[j] < cardArray[min]) {
+              min=j; 
+          }
+       }
+       if (min != i) {
+           // Swapping the elements
+           let tmp = cardArray[i]; 
+           cardArray[i] = cardArray[min];
+           cardArray[min] = tmp;      
+           drawSorted();
       }
-      console.log(cardArray);
-      console.log(symbolArray);
-      j++;
-    }
-    drawSorted();
-    stop--;
   }
 });
 
