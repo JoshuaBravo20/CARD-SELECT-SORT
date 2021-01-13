@@ -14,7 +14,6 @@ let cardArray = [];
 let symbolArray = [];
 
 let parentRow = document.querySelector("#parentRow");
-let sortedField = document.querySelector("#sortedField");
 let suits = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
 let nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "K", "Q", "J"];
 
@@ -30,10 +29,15 @@ function drawCards() {
   let newUpS = document.createElement("span");
   let newDownS = document.createElement("span");
   let newCardNum = document.createElement("span");
+
+  let obj = {
+    number: nums[randomNum],
+    suits: suits[randomSuit]
+  }
   //ASIGNAR LOS VALORES ALEATORIOS A CADA PARTE DE LA CARTA
-  newUpS.innerHTML = suits[randomSuit];
-  newDownS.innerHTML = suits[randomSuit];
-  newCardNum.innerHTML = nums[randomNum];
+  newUpS.innerHTML = obj.suits;
+  newDownS.innerHTML = obj.suits;
+  newCardNum.innerHTML = obj.number;
   //AGREGAR LAS CLASES, PARA ESTRUCTURA Y DETALLES VISUALES
   newCard.classList.add("card", "animate__animated", "animate__bounceIn");
   cardBody.classList.add("card-body");
@@ -49,8 +53,7 @@ function drawCards() {
   col.appendChild(newCard);
   parentRow.appendChild(col);
   // CREAR ARRAY CON VALORES PARA ORDENAR
-  cardArray.push(newCardNum.innerHTML);
-  symbolArray.push(newUpS.innerHTML);
+  cardArray.push(obj);
 }
 
 // SE DIBUJA LA CANTIDAD QUE INGRESE EL USUARIO DESDE EL INPUT
@@ -76,7 +79,7 @@ sortBtn.addEventListener("click", function () {
       // Finding the smallest number in the subarray
       let min = i;
       for(let j = i+1; j < n; j++){
-          if(cardArray[j] < cardArray[min]) {
+          if(cardArray[j].number < cardArray[min].number) {
               min=j; 
           }
        }
@@ -121,8 +124,8 @@ function drawSorted() {
   col.appendChild(newCard);
   newRow.appendChild(col);
 
-  newCardNum.innerHTML = cardArray[i];
-  newUpS.innerHTML = symbolArray[i];
-  newDownS.innerHTML = symbolArray[i];
+  newCardNum.innerHTML = cardArray[i].number;
+  newUpS.innerHTML = cardArray[i].suits;
+  newDownS.innerHTML = cardArray[i].suits;
   }
 }
